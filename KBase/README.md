@@ -23,6 +23,9 @@ This readme will show you how to upload a group of genomes to KBase and build me
 6. Run the script loadGenomes.pl to push your genomes to KBase:  
 `perl loadGenomes.pl username password genomeDir workspaceID`  
 where `username` and `password` are your KBase username and password, and `genomeDir` and `workspaceID` are from the above steps.  
-If you used perlbrew for this step, feel free to revert to your original perl installation when you're done: `perlbrew off`
+
+  a. You may need to install the ["Exception::Class" module](http://search.cpan.org/~drolsky/Exception-Class-1.39/lib/Exception/Class.pm). This is easily done using [CPAN](http://www.cpan.org/). Here is a [tutorial](http://www.thegeekstuff.com/2008/09/how-to-install-perl-modules-manually-and-using-cpan-command/).
+
+  b. If you used perlbrew for this step, feel free to revert to your original perl installation when you're done: `perlbrew off`
 
 7. You should now see your genomes (as `ContigSet`) objects in the narrative we copied above. To build metabolic models, run the code cells in the narrative. (Code cells can be run by selecting the cell and pressing Shift+Enter). This typically takes between 5 and 10 minutes per genome. When you are done, you can download SBML files of the models via the hyperlink generated in the final step.
