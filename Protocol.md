@@ -50,39 +50,29 @@ If the directories are non-empty, contact the file’s owner to make sure you ca
 3.	Ensure the configuration and parameter files are correct.  
   * Configuration file: `/shared_software/metapathways2-2.5.2/config/config_server.txt`.  
   Items to check include:  
-          * \# Paths for the Python, Perl and Pathway Tools
-              * PYTHON_EXECUTABLE: `/usr/bin/python`
-              * PGDB_FOLDER: `/shared_software/ptools-local/pgdbs/user`
-              * METAPATHWAYS_PATH: `/shared_software/metapathways2-2.5.2`
-              * PATHOLOGIC_EXECUTABLE: `/usr/local/pathway-tools/aic-export/pathway-tools/ptools/19.0/pathway-tools`
-              * REFDBS `/shared_software/MetaPathways_DBs`
-          * \# Executables
-              * EXECUTABLES_DIR `executables/ubuntu`
+          * PYTHON_EXECUTABLE: `/usr/bin/python`
+          * PGDB_FOLDER: `/shared_software/ptools-local/pgdbs/user`
+          * METAPATHWAYS_PATH: `/shared_software/metapathways2-2.5.2`
+          * PATHOLOGIC_EXECUTABLE: `/usr/local/pathway-tools/aic-export/pathway-tools/ptools/19.0/pathway-tools`
+          * REFDBS `/shared_software/MetaPathways_DBs`
+          * EXECUTABLES_DIR `executables/ubuntu`
+    * Parameter file: `/shared_software/metapathways2-2.5./config/param_server.txt`. Items to check include:
+          * INPUT:format `fasta`
+          * annotation:algorithm `LAST`
+          * annotation:dbs `CAZY_2014_09_04, COG_2013-12-27, metacyc-v5-2011-10-21, refseq-2015-09-03, SEED-2013-03-13`
+          * rRNA:refdbs `gg_13_5, SILVA_LSURef_2015-07-23, SILVA_SSURef_Nr99_2015-07-23`
+          * metapaths_steps:PREPROCESS_INPUT `yes`
+          * metapaths_steps:ORF_PREDICTION `yes`
+          * metapaths_steps:FILTER_AMINOS `yes`
+          * metapaths_steps:FUNC_SEARCH `yes`
+          * metapaths_steps:PARSE_FUNC_SEARCH `yes`
+          * metapaths_steps:SCAN_rRNA `yes`
+          * metapaths_steps:SCAN_tRNA `yes`
+          * metapaths_steps:ANNOTATE_ORFS `yes`
+          * metapaths_steps:BUILD_PGDB `skip`
+          * metapaths_steps:COMPUTE_RPKM `skip`  
 
-b.	Parameter:       /shared_software/metapathways2.5/ config/param_server.txt
-Items to check include …
-
-INPUT:format fasta
-
-annotation:algorithm LAST
-
-annotation:dbs CAZY_2014_09_04, COG_2013-12-27, metacyc-v5-2011-10-21, refseq-nr-2015-03-04, SEED-2013-03-13
-
-rRNA:refdbs greengenes_2013_05, SILVA_119_LSURef_tax_silva_2014-08-12, SILVA_119_SSURef_Nr99_tax_silva_2014-08-12
-
-# pipeline execution flags
-metapaths_steps:PREPROCESS_INPUT yes
-metapaths_steps:ORF_PREDICTION yes
-metapaths_steps:FILTER_AMINOS yes
-metapaths_steps:FUNC_SEARCH yes
-metapaths_steps:PARSE_FUNC_SEARCH yes
-metapaths_steps:SCAN_rRNA yes
-metapaths_steps:SCAN_tRNA yes
-metapaths_steps:ANNOTATE_ORFS yes
-metapaths_steps:BUILD_PGDB skip
-metapaths_steps:COMPUTE_RPKM skip
-
-Note: it is important that BUILD_PGDB is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
+          Note: it is important that BUILD_PGDB is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
 
 4.	From the /shared_software/metapathways2.5 folder, run MetaPathways via the following command:
 python MetaPathways.py
