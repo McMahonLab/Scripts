@@ -45,21 +45,19 @@ MetaPathways and Pathway Tools installed on your local computer
   * PGDBs: `/shared_software/ptools-local/pgdbs/user`  
 If the directories are non-empty, contact the file’s owner to make sure you can safely delete them!
 
-2.	Copy your genomes to /shared_software/metapathways2.5/input. Genomes should be in fasta nucleotide format. Genomes can be found on zissou in the data folder, or downloaded from IMG. Note that file names cannot contain internal periods (e.g., MEint.metabat.3163.fna should be renamed MEintmetabat3163.fna.
+2.	Copy your genomes to `/shared_software/metapathways2-2.5.2/input`. Genomes should be in `fasta` nucleotide format. File names cannot contain internal periods (e.g., `MEint.metabat.3163.fna` should be renamed `ME3163.fna`.
 
-3.	Ensure the configuration and parameter files are correct.
-a.	Configuration: /shared_software/metapathways2.5/config/config_server.txt
-Items to check include …
-
-# Paths for the Python …
-PYTHON_EXECUTABLE '/usr/bin/python'
-PGDB_FOLDER '/data/ptools-local/pgdbs/user'
-METAPATHWAYS_PATH '/shared_software/metapathways2.5'
-PATHOLOGIC_EXECUTABLE '/usr/local/pathway-tools/aic-export/pathway-tools/ptools/18.0/pathway-tools'
-REFDBS '/shared_software/databases'
-
-# Executables
-EXECUTABLES_DIR 'executables/ubuntu'
+3.	Ensure the configuration and parameter files are correct.  
+  * Configuration file: `/shared_software/metapathways2-2.5.2/config/config_server.txt`.  
+  Items to check include:  
+          * \# Paths for the Python, Perl and Pathway Tools
+              * PYTHON_EXECUTABLE: `/usr/bin/python`
+              * PGDB_FOLDER: `/shared_software/ptools-local/pgdbs/user`
+              * METAPATHWAYS_PATH: `/shared_software/metapathways2-2.5.2`
+              * PATHOLOGIC_EXECUTABLE: `/usr/local/pathway-tools/aic-export/pathway-tools/ptools/19.0/pathway-tools`
+              * REFDBS `/shared_software/MetaPathways_DBs`
+          * \# Executables
+              * EXECUTABLES_DIR `executables/ubuntu`
 
 b.	Parameter:       /shared_software/metapathways2.5/ config/param_server.txt
 Items to check include …
@@ -122,14 +120,14 @@ a.	Configuration: example on zissou at
 Items to check include …
 
 # Paths for the Python …
-PYTHON_EXECUTABLE '/path/to/python'
-PGDB_FOLDER '/path/to/ptools-local/pgdbs/user'
-METAPATHWAYS_PATH '/path/to/metapathways2.5'
-PATHOLOGIC_EXECUTABLE '/path/to/pathway-tools/aic-export/pathway-tools/ptools/VERSION/pathway-tools'
-REFDBS '/path/to/metapathways2.5/databases'
+PYTHON_EXECUTABLE `/path/to/python`
+PGDB_FOLDER `/path/to/ptools-local/pgdbs/user`
+METAPATHWAYS_PATH `/path/to/metapathways2.5`
+PATHOLOGIC_EXECUTABLE `/path/to/pathway-tools/aic-export/pathway-tools/ptools/VERSION/pathway-tools`
+REFDBS `/path/to/metapathways2.5/databases`
 
 # Executables
-EXECUTABLES_DIR 'executables/yourOS'
+EXECUTABLES_DIR `executables/yourOS`
 
 b.	Parameter: example on zissou at
 /shared_software/metapathways2.5/param_local_buildPGDB.txt
