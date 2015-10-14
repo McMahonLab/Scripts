@@ -1,0 +1,55 @@
+##V.1   do not remove this line
+# MetaPathways v1.0 
+# Kishori M. Konwar, Niels W. Hanson
+# Parameter File
+
+INPUT:format fasta
+# e.g. fasta gbk-annotated gbk-unannotated gff-annotated gff-unannotated
+
+# Quality Control  parameters 
+quality_control:min_length 180
+quality_control:delete_replicates yes
+
+# ORF prediction parameters 
+orf_prediction:algorithm prodigal
+orf_prediction:min_length 60
+orf_prediction:translation_table 11
+
+# ORF annotation parameters
+annotation:algorithm LAST
+# e.g. BLAST or LAST
+
+#annotation:dbs metacyc-v4-2011-07-03,refseq-nr-2014-01-18,etc
+annotation:dbs 
+
+# e.g. annotation:dbs    cog,kegg,refseq,metacyc
+annotation:min_bsr 0.4
+annotation:max_evalue 0.000001
+annotation:min_score 20
+annotation:min_length 60
+annotation:max_hits 5
+
+# rRNA annotation parameters LSURef_115_tax_silva
+rRNA:refdbs 
+
+rRNA:max_evalue 0.000001
+rRNA:min_identity 20
+rRNA:min_bitscore 50
+
+# pathway tools parameters
+ptools_settings:taxonomic_pruning no
+
+# grid settings
+
+# pipeline execution flags
+# e.g. yes, skip, yes
+metapaths_steps:PREPROCESS_INPUT skip
+metapaths_steps:ORF_PREDICTION skip
+metapaths_steps:FILTER_AMINOS skip
+metapaths_steps:FUNC_SEARCH skip
+metapaths_steps:PARSE_FUNC_SEARCH skip
+metapaths_steps:SCAN_rRNA skip
+metapaths_steps:SCAN_tRNA skip
+metapaths_steps:ANNOTATE_ORFS skip
+metapaths_steps:BUILD_PGDB yes
+metapaths_steps:COMPUTE_RPKM skip
