@@ -95,73 +95,71 @@ If the directories are non-empty, contact the file’s owner to make sure you ca
 
 ## Phase 2: Building a PGDB on your local computer
 
-6.	On your local computer, remove the inputs and outputs of all previous runs, by deleting the contents of the following directories.
-MP input	/path/to/metapathways2.5/input
-MP output	/path/to/metapathways2.5/output
-PGDBs		/path/to/ptools-local/pgdbs/user
-If the directories are non-empty, copy the folder contents to a safe location!
+1.	On your local computer, remove the inputs and outputs of all previous runs, by deleting the contents of the following directories.
+  * MP input: `/path/to/metapathways2-2.5.2/input`
+  * MP output: `/path/to/metapathways2-2.5.2/output`
+  * PGDBs: `/path/to/ptools-local/pgdbs/user`
 
-7.	Copy the MetaPathways input and output from your home directory on zissou to /path/to/metapathways2.5/input and /path/to/metapathways2.5/output, respectively.
+  If the directories are non-empty, copy the folder contents to a safe location!
 
-8.	Ensure the configuration and parameter files are correct.
-a.	Configuration: example on zissou at
-/shared_software/metapathways2.5/config_local.txt
-Items to check include …
+2.	Copy the MetaPathways input and output from your home directory on Zissou to `/path/to/metapathways2-2.5.2/input` and `/path/to/metapathways2-2.5.2/output`, respectively.
 
-# Paths for the Python …
-PYTHON_EXECUTABLE `/path/to/python`
-PGDB_FOLDER `/path/to/ptools-local/pgdbs/user`
-METAPATHWAYS_PATH `/path/to/metapathways2.5`
-PATHOLOGIC_EXECUTABLE `/path/to/pathway-tools/aic-export/pathway-tools/ptools/VERSION/pathway-tools`
-REFDBS `/path/to/metapathways2.5/databases`
+3.	Ensure the configuration and parameter files are correct:  
+  * Configuration file: `/path/to/metapathways2-2.5.2/config/config_local.txt`.  
+  Items to check include:  
+        * PYTHON_EXECUTABLE `/path/to/python`
+        * PGDB_FOLDER `/path/to/ptools-local/pgdbs/user`
+        * METAPATHWAYS_PATH `/path/to/metapathways2-2.5.2`
+        * PATHOLOGIC_EXECUTABLE `/path/to/pathway-tools/aic-export/pathway-tools/ptools/VERSION/pathway-tools`
+        * REFDBS `/path/to/metapathways2-2.5.2/databases`
+        * EXECUTABLES_DIR `executables/yourOS`
+    * Parameter file: `/path/to/metapathways2-2.5./config/param_local.txt`.  
+    Items to check include:
+        * INPUT:format `fasta`
+        * annotation:algorithm `LAST`
+        * annotation:dbs # should be blank
+        * rRNA:refdbs # should be blank
+        * metapaths_steps:PREPROCESS_INPUT `skip`
+        * metapaths_steps:ORF_PREDICTION `skip`
+        * metapaths_steps:FILTER_AMINOS `skip`
+        * metapaths_steps:FUNC_SEARCH `skip`
+        * metapaths_steps:PARSE_FUNC_SEARCH `skip`
+        * metapaths_steps:SCAN_rRNA `skip`
+        * metapaths_steps:SCAN_tRNA `skip`
+        * metapaths_steps:ANNOTATE_ORFS `skip`
+        * metapaths_steps:BUILD_PGDB `yes`
+        * metapaths_steps:COMPUTE_RPKM `skip`
 
-# Executables
-EXECUTABLES_DIR `executables/yourOS`
+        Note: it is important that all commands except BUILD_PGDB are set to skip, otherwise MetaPathways will needlessly repeat the analysis you ran on the server.
 
-b.	Parameter: example on zissou at
-/shared_software/metapathways2.5/param_local_buildPGDB.txt
-Items to check include …
+        `python MetaPathways.py  
+        -i /shared_software/metapathways2-2.5.2/input  
+        -o /shared_software/metapathways2-2.5.2/output  
+        -c /shared_software/metapathways2-2.5.2/config/config_server.txt  
+        -p /shared_software/metapathways2-2.5.2/config/param_server.txt  
+        –v`
 
-INPUT:format fasta
+      Example parameter and configuration files are available in this repo.
 
-annotation:algorithm LAST
+9.	From the `/path/to/metapathways2-2.5.2` folder, run MetaPathways via the following command:  
+      `python MetaPathways.py
+      -i /path/to/metapathways2-2.5.2/input
+      -o /path/to/metapathways2-2.5.2/output
+      -c /path/to/metapathways2-2.5.2/config/config_local.txt
+      -p /path/to/metapathways2-2.5.2/config/param_local_buildPGDB.txt
+      -d 8
+      -v
+      -r overlay`
 
-annotation:dbs # should be blank
-rRNA:refdbs # should be blank
+      Information about the command:
+      `-i` is the input folder  
+      `-o` is the output folder  
+      `-c` is the configuration file  
+      `-p` is the parameter file  
+      `-d 8` closes Pathway Tools and re-open at invocation  
+      `-v` tells MetaPathways to run in verbose mode  
+      `-r` overlay accepts pre-existing results  
 
-# pipeline execution flags
-metapaths_steps:PREPROCESS_INPUT skip
-metapaths_steps:ORF_PREDICTION skip
-metapaths_steps:FILTER_AMINOS skip
-metapaths_steps:FUNC_SEARCH skip
-metapaths_steps:PARSE_FUNC_SEARCH skip
-metapaths_steps:SCAN_rRNA skip
-metapaths_steps:SCAN_tRNA skip
-metapaths_steps:ANNOTATE_ORFS skip
-metapaths_steps:BUILD_PGDB yes
-metapaths_steps:COMPUTE_RPKM skip
+      You now have a PGDB! The running time of this command is highly variable. I didn’t time this step, so I don’t know how long it takes.
 
-Note: it is important that all commands except BUILD_PGDB are set to skip, otherwise MetaPathways will needlessly repeat the analysis you ran on the server.
-
-9.	From the /path/to/metapathways2.5 folder, run MetaPathways via the following command:
-python MetaPathways.py
--i /path/to/metapathways2.5/input
--o /path/to/metapathways2.5/output
--c /path/to/metapathways2.5/config/config_local.txt
--p /path/to/metapathways2.5/config/param_local_buildPGDB.txt
--d 8
--v
--r overlay
-
-Information about the command:
--i is the input folder
--o is the output folder
--c is the configuration file
--p is the parameter file
--d 8 closes Pathway Tools and re-open at invocation
--v tells MetaPathways to run in verbose mode
--r overlay accepts pre-existing results
-
-You now have a PGDB! The running time of this command is highly variable. I didn’t time this step, so I don’t know how long it takes.
-
-10.	To run post-processing scripts, from /path/to/pathway-tools invoke Pathway Tools in api mode via the following command: ./pathway-tools –api and follow the examples online at https://github.com/hallamlab/mp_tutorial/wiki/Pathway-Analysis
+10.	To run post-processing scripts, from `/path/to/pathway-tools` invoke Pathway Tools in api mode via the following command: `./pathway-tools –api` and follow the examples [online](https://github.com/hallamlab/mp_tutorial/wiki/Pathway-Analysis).
