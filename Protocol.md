@@ -74,27 +74,26 @@ If the directories are non-empty, contact the file’s owner to make sure you ca
 
           Note: it is important that BUILD_PGDB is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
 
-4.	From the /shared_software/metapathways2.5 folder, run MetaPathways via the following command:
-python MetaPathways.py
--i /shared_software/metapathways2.5/input
--o /shared_software/metapathways2.5/output
--c /shared_software/metapathways2.5/config/config_server.txt
--p /shared_software/metapathways2.5/config/param_server.txt
-–v
+4.	From the `/shared_software/metapathways2-2.5.2 folder`, run MetaPathways via the following command:  
+      `python MetaPathways.py  
+      -i /shared_software/metapathways2-2.5.2/input  
+      -o /shared_software/metapathways2-2.5.2/output  
+      -c /shared_software/metapathways2-2.5.2/config/config_server.txt  
+      -p /shared_software/metapathways2-2.5.2/config/param_server.txt  
+      –v`
 
-Information about the command:
--i is the input folder
--o is the output folder
--c is the configuration file
--p is the parameter file
--v tells MetaPathways to run in verbose mode
+      Information about the command:  
+      `-i` is the input folder  
+      `-o` is the output folder  
+      `-c` is the configuration file  
+      `-p` is the parameter file  
+      `-v` tells MetaPathways to run in verbose mode
 
-Your genome has now been annotated! The running time of this command is highly variable. In the worst-case scenario, MetaPathways should take about 1 hr per MB of sequence.
+  Your genome has now been annotated! The running time of this command is highly variable. In the worst-case scenario, MetaPathways should take about 1 hr per MB of sequence.
 
-5.	Copy the input and output folders from /shared_software/metapathways2.5 to your home directory. Then, delete the contents of the input and output folders.
+5.	Copy the input and output folders from /shared_software/metapathways2-2.5.2 to your home directory. Then, delete the contents of the input and output folders.
 
-
-Phase 2: Building a PGDB on your local computer
+## Phase 2: Building a PGDB on your local computer
 
 6.	On your local computer, remove the inputs and outputs of all previous runs, by deleting the contents of the following directories.
 MP input	/path/to/metapathways2.5/input
