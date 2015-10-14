@@ -69,5 +69,4 @@ Manually downloaded:
 
 
 ## Formatting the Databases
-After the databases are installed the must be formatted. The easiset way to do this is to invoke Metapathways and look for errors during
-Notes on formatting the databases ...
+After the databases are installed they must be formatted. The easiest way to do this is to call MetaPathways on a single genome, skipping all pipeline execution flags. (Instructions for doing so are available in MetaPathwaysProtocol.md. Use the parameter file `param_formatDBs.txt`) If the databases are unformatted, MetaPathways will attempt to format them.
