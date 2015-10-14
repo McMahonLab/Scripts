@@ -19,7 +19,8 @@ orf_prediction:translation_table 11
 annotation:algorithm LAST
 # e.g. BLAST or LAST
 
-#annotation:dbs annotation:dbs CAZY_2014_09_04, COG_2013-12-27, metacyc-v5-2011-10-21, refseq-2015-09-03, SEED-2013-03-13
+#annotation:dbs
+annotation:dbs CAZY_2014_09_04, COG_2013-12-27, metacyc-v5-2011-10-21, refseq-2015-09-03, SEED-2013-03-13
 
 # e.g. annotation:dbs    cog,kegg,refseq,metacyc
 annotation:min_bsr 0.4
