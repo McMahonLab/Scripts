@@ -40,7 +40,7 @@ Manually downloaded:
 1. Download the [NCBI batch downloader script](http://www.ncbi.nlm.nih.gov/blast/docs/update_blastdb.pl) and place it in `MetaPathways_DBs/functional`.  
 2. Run the command `perl update_blastdb.pl refseq_protein` to download the databases. This takes approximately 90 minutes.  
 3. Extract the archives using ``for a in `ls *.tar.gz`; do tar -zxvf $a; done``.  
-4. When done, delete the original `.tar.gz` files: `rm *.tar.gz`.   
+4. When done, delete the original `.tar.gz` files: `rm *.tar.gz`.
 5. Extract the FASTA sequences from the `refseq_protein` database using the `blastdbcmd` command: `blastdbcmd -db refseq_protein -dbtype prot -entry all -outfmt %f -out refseq-YYYY-MM-DD`, where `YYYY-MM-DD` corresponds to the date of the latest release. This takes approximately 30 minutes.  
 6. Delete the original databases: `rm refseq_protein*`.
 
@@ -59,14 +59,10 @@ Manually downloaded:
 
 #### ** GreenGenes Database **
 1. Download the latest [GreenGenes](http://greengenes.secondgenome.com) database (`gg_13_5.fasta.gz`) and taxonomy (`gg_13_5_taxonomy.txt.gz`) files.
-2. Extract the files and place them in `MetaPathways_DBs/taxonomic` on Zissou.
+2. Extract the files and place them in `MetaPathways_DBs/taxonomic` on Zissou. Remove the `.fasta` extension.
 
 #### ** SILVA Database **
 1. Download the latest SSU (`SILVA_123_SSURef_Nr99_tax_silva.fasta`) and LSU (`	SILVA_123_LSURef_tax_silva.fasta`) databases from [SILVA](http://www.arb-silva.de/no_cache/download/archive/release_123/Exports/). Databases should be in `.fasta` format.
 2. Extract the files and rename them to `SILVA_LSURef_YYYY-MM-DD` and
 `SILVA_SSURef_Nr99_YYYY-MM-DD`, where `YYYY-MM-DD` corresponds to the date of the latest release.
-3. Place the files in `MetaPathways_DBs/taxonomic` on Zissou.
-
-
-## Formatting the Databases
-After the databases are installed they must be formatted. The easiest way to do this is to call MetaPathways on a single genome, skipping all pipeline execution flags. (Instructions for doing so are available in MetaPathwaysProtocol.md. Use the parameter file `param_formatDBs.txt`) If the databases are unformatted, MetaPathways will attempt to format them.
+3. Place the files in `MetaPathways_DBs/taxonomic` on Zissou. Remove the `.fasta` extension.
