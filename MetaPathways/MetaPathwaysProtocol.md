@@ -164,6 +164,6 @@ If the directories are non-empty, contact the file’s owner to make sure you ca
       `-v` tells MetaPathways to run in verbose mode  
       `-r` overlay accepts pre-existing results  
 
-      You now have a PGDB! On a Mid-2012 MacBook Pro, this step takes approximately 15 minutes per MB of sequence.
+      You now have a PGDB! On a Mid-2012 MacBook Pro, this step takes approximately 15 minutes per MB of sequence. New Pathway Tools windows will frequently open during this step. We recommend you only run this step when you aren't using your computer for something else.
 
 10.	To run post-processing scripts, from `/path/to/pathway-tools` invoke Pathway Tools in api mode via the following command: `./pathway-tools –api` and follow the examples [online](https://github.com/hallamlab/mp_tutorial/wiki/Pathway-Analysis).
