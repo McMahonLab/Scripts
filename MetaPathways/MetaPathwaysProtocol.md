@@ -39,6 +39,10 @@ Manually downloaded:
 MetaPathways and Pathway Tools installed on your local computer
 
 ## Phase 1: Annotating Genomes on the Server
+0. Prior to running MetaPathways, reserve space on the server!  
+  * MetaPathways requires 1 processor, consumes 5GB of RAM, and takes about 40 minutes per MB of sequence.  
+  * This is an example of a [good reservation](https://www.google.com/calendar/event?action=TEMPLATE&tmeid=YmRlMWlzMjlkYjU5ODRmdGpsc2syODczdmsgYXU1cW9kMHE0bWNyZWM5MXJ2cjFmbXV1NzBAZw&tmsrc=au5qod0q4mcrec91rvr1fmuu70%40group.calendar.google.com).
+
 1.	On Zissou, remove the inputs and outputs of all previous runs, by deleting the contents of the following directories:
   * MP input: `/shared_software/metapathways2-2.5.2/input`
   * MP output: `/shared_software/metapathways2-2.5.2/output`
