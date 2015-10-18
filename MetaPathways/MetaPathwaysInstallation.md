@@ -66,3 +66,6 @@ Manually downloaded:
 2. Extract the files and rename them to `SILVA_LSURef_YYYY-MM-DD` and
 `SILVA_SSURef_Nr99_YYYY-MM-DD`, where `YYYY-MM-DD` corresponds to the date of the latest release.
 3. Place the files in `MetaPathways_DBs/taxonomic` on Zissou. Remove the `.fasta` extension.
+
+## Formatting the Databases
+After the databases are installed they must be formatted. The easiest way to do this is to call MetaPathways without any input, skipping all pipeline execution flags. (Instructions for running MetaPathways are available in MetaPathwaysProtocol.md. Use the parameter file `param_formatDBs.txt`) If the databases are unformatted, MetaPathways will attempt to format them. This process takes around 12 hours.
