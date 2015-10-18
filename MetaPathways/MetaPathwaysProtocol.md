@@ -150,7 +150,7 @@ If the directories are non-empty, contact the file’s owner to make sure you ca
       -i /path/to/metapathways2-2.5.2/input
       -o /path/to/metapathways2-2.5.2/output
       -c /path/to/metapathways2-2.5.2/config/config_local.txt
-      -p /path/to/metapathways2-2.5.2/config/param_local_buildPGDB.txt
+      -p /path/to/metapathways2-2.5.2/config/param_local.txt
       -d 8
       -v
       -r overlay`
