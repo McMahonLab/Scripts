@@ -14,3 +14,6 @@ Information pertaining to installation of MetaPathways and for building PGDBs us
 * `MetaPathwaysInstallation.md` - Instructions for installing MetaPathways on the server.
 * `MetaPathwaysProtocol.md` - Protocol for building a PGDB
 * `Config` and `Param` files - configuration and parameter files for running MetaPathways locally and on the server.
+
+### Phylogeny
+Scripts for building phylogenetic trees. Currently only contains scripts for building tree using Phylosift marker genes.
