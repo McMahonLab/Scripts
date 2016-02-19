@@ -35,6 +35,7 @@ The initial folder structure should look like the following.
     │   ├── 02parallelBlast.py  # Runs the all-vs-all BLAST job in parallel
     │   ├── 03setupMySql.sh     # Prepare the MySQL DB for use with OrthoMCL
     │   ├── 04runOrthoMCL.sh    # Run OrthoMCL
+    │   ├── 05parseCOGs.py      # Parse the OrthoMCL output.
     │   └── taxonMapping.txt    # File containing a linkage between your fasta file names and OrthoMCL-compliant four-letter codes
 
 You will need to create the `genomes\faa` folder and `taxonMapping.txt` files as follows:
@@ -61,8 +62,13 @@ The workflow consists of four scripts, summarized below.
 
 * 03setupMySql.sh - Prepares the MySQL database for use with OrthoMCL.
 
-
 * 04runOrthoMCL.sh - Runs OrthoMCL. Results are stored in the `results` folder.
+
+* 05parseCOGs.py - Processes the MCL output into reader-friendly tables, as described:
+
+  * cogTable.csv - Rows are COGs. Columns are genomes. Matrix elements are gene loci for each (COG, genome) pair, if such a locus exists.
+  * annotTable.csv - Rows are COGs. Columns are genomes. Matrix elements are gene annotation for each (COG, genome) pair, if such a locus exists. If annotation is given, the entry will state 'None Provided.'
+  * annotSummary.csv - Rows are COGs. Lists all annotations associated with that COG across all genomes.
 
 They are configured to be run from the `scripts` folder.
 
@@ -100,4 +106,5 @@ When the workflow is complete, your directory should look as follows:
     │   ├── 02parallelBlast.py    # Runs the all-vs-all BLAST job in parallel
     │   ├── 03setupMySql.sh       # Prepare the MySQL DB for use with OrthoMCL
     │   ├── 04runOrthoMCL.sh      # Run OrthoMCL
+    │   ├── 05parseCOGs.py      # Parse the OrthoMCL output.
     │   └── taxonMapping.txt      # File containing a linkage between your fasta file names and OrthoMCL-compliant four-letter codes
