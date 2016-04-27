@@ -43,7 +43,7 @@ ptools_settings:taxonomic_pruning no
 
 # pipeline execution flags
 # e.g. yes, skip, yes
-metapaths_steps:PREPROCESS_INPUT yes
+metapaths_steps:PREPROCESS_INPUT skip
 metapaths_steps:ORF_PREDICTION yes
 metapaths_steps:FILTER_AMINOS yes
 metapaths_steps:FUNC_SEARCH yes
