@@ -1,6 +1,6 @@
 # Running MetaPathways on Zissou
 ##### Joshua J Hamilton
-##### Last Revision: October 13, 2015
+##### Last Revision: April 27, 2016
 
 ## Installation Directories
 * Pathways Tools: `/usr/local/pathway-tools`
@@ -16,11 +16,9 @@ The protocol has two phases. In the first phase, genomes are annotated on Zissou
 Users must be members of the `ptools` group to access the PathwayTools and MetaPathways database folders.
 
 ## Software Availability
-Pathway Tools Software – currently version 19.0					http://bioinformatics.ai.sri.com/ptools/dist-473256968.html
+[Pathway Tools Software](http://bioinformatics.ai.sri.com/ptools/dist-473256968.html) – currently version 19.0					
 
-MetaPathways – currently version 2.5.2
-https://github.com/hallamlab/metapathways2.git
-
+[MetaPathways](https://github.com/hallamlab/metapathways2.git) – currently version 2.5.2
 
 ## Database Availability
 Available through the MetaPathways distribution:  
@@ -135,13 +133,6 @@ If the directories are non-empty, contact the file’s owner to make move the fi
         * metapaths_steps:COMPUTE_RPKM `skip`
 
         Note: it is important that all commands except BUILD_PGDB are set to skip, otherwise MetaPathways will needlessly repeat the analysis you ran on the server.
-
-        `python MetaPathways.py  
-        -i /shared_software/metapathways2-2.5.2/input  
-        -o /shared_software/metapathways2-2.5.2/output  
-        -c /shared_software/metapathways2-2.5.2/config/config_server.txt  
-        -p /shared_software/metapathways2-2.5.2/config/param_server.txt  
-        –v`
 
       Example parameter and configuration files are available in this repo.
 
