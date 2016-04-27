@@ -86,6 +86,8 @@ This script performs the pre-processing which would otherwise be performed by Me
       * metapaths_steps:BUILD_PGDB `skip`
       * metapaths_steps:COMPUTE_RPKM `skip`  
 
+  Note: it is important that PREPROCESS_INPUT is set to skip because we have a new script which performs this step.
+
   Note: it is important that BUILD_PGDB is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
 
 2.	From the `/shared_software/metapathways2-2.5.2 folder`, run MetaPathways via the following command:  
