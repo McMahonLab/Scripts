@@ -86,7 +86,7 @@ for genome in genomeList:
     
     # Write the mapping table to file
     mappingTable[['Length']] = mappingTable[['Length']].astype(int)
-    mappingTable.to_csv(outputFolder+'/'+genome+'/preprocessed/'+genome+'.mapping.text', sep='\t', header=False, index=False)
+    mappingTable.to_csv(outputFolder+'/'+genome+'/preprocessed/'+genome+'.mapping.txt', sep='\t', header=False, index=False)
     
 
 # Write the list of bad genomes to file
