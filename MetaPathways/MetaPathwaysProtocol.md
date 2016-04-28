@@ -39,7 +39,7 @@ MetaPathways and Pathway Tools installed on your local computer
 ## Phase 1: Pre-Processing
 
 1. Prior to running MetaPathways, reserve space on the server!  
-  * MetaPathways requires 1 processor, consumes 5GB of RAM, and takes about 40 minutes per MB of sequence.  
+  * MetaPathways requires 1 processor, consumes 5GB of RAM, and takes up to 30 minutes per MB of sequence.
   * This is an example of a [good reservation](https://www.google.com/calendar/event?action=TEMPLATE&tmeid=YmRlMWlzMjlkYjU5ODRmdGpsc2syODczdmsgYXU1cW9kMHE0bWNyZWM5MXJ2cjFmbXV1NzBAZw&tmsrc=au5qod0q4mcrec91rvr1fmuu70%40group.calendar.google.com).
 
 2.	On Zissou, check the inputs and outputs of all previous runs, by examining the contents of the following directories:
@@ -86,7 +86,7 @@ This script performs the pre-processing which would otherwise be performed by Me
       * metapaths_steps:BUILD_PGDB `skip`
       * metapaths_steps:COMPUTE_RPKM `skip`  
 
-  Note: it is important that PREPROCESS_INPUT is set to skip because we have a new script which performs this step.
+  Note: it is important that PREPROCESS_INPUT is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
 
   Note: it is important that BUILD_PGDB is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
 
@@ -105,7 +105,7 @@ This script performs the pre-processing which would otherwise be performed by Me
       `-p` is the parameter file  
       `-v` tells MetaPathways to run in verbose mode
 
-  Your genome has now been annotated! The running time of this command is highly variable. In the worst-case scenario, MetaPathways should take about 1 hr per MB of sequence.
+  Your genome has now been annotated! The running time of this command is highly variable. In the worst-case scenario, MetaPathways takes up to 30 minutes per MB of sequence.
 
 3.	Copy the input and output folders from /shared_software/metapathways2-2.5.2 to your home directory. Then, delete the contents of the input and output folders.
 
