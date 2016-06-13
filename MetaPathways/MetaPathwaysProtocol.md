@@ -86,9 +86,9 @@ This script performs the pre-processing which would otherwise be performed by Me
       * metapaths_steps:BUILD_PGDB `skip`
       * metapaths_steps:COMPUTE_RPKM `skip`  
 
-  Note: it is important that PREPROCESS_INPUT is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
+  Note: it is important that PREPROCESS_INPUT is set to `skip` because the script `01Preprocessing.py` invoked above carries out this step and we don't want to overwrite the results.
 
-  Note: it is important that BUILD_PGDB is set to skip because the Pathway Tools GUI invoked by that step does not work on the server.
+  Note: it is important that BUILD_PGDB is set to `skip` because the Pathway Tools GUI invoked by that step does not work on the server.
 
 2.	From the `/shared_software/metapathways2-2.5.2 folder`, run MetaPathways via the following command:  
       `python MetaPathways.py  
